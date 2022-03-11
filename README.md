@@ -1,12 +1,5 @@
 # Development Environment Configuration
-## INDEX
-#### [01] VCS - Git Setup
-#### [02] NVM - Node & NPM Setup
-#### [03] Terminal - ZSH Setup
-#### [04] Code Editor - VS Code Setup
-#### [05] Project - Angular Setup
-#### [7] Increase Max. User Watches (fix for WSL)
----
+
 ### [01] VCS - Git Setup
 #### Update Git
 ```bash
