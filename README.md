@@ -56,7 +56,7 @@ append ```--latest-npm``` to update to latest NPM version
 ```bash
 nvm install-latest-npm
 ```
-
+---
 ### [03] Terminal - ZSH Setup
 #### Install ZSH
 ```bash
@@ -90,7 +90,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Use plugins
 plugins=(git nvm zsh-autosuggestions zsh-syntax-highlighting)
 ```
-
+---
 ### [04] Code Editor - VS Code Setup
 Launch VS Code Quick Open (Ctrl+P) and paste the below commands:
 #### Install VS Code Extension - ESLint
@@ -207,7 +207,7 @@ ext install angular.ng-template
   "github.copilot.list.count": 15
 }
 ```
-
+---
 ### [05] Project - Angular Setup
 #### Install Angular CLI (Globally)
 ```bash
