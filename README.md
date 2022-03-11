@@ -7,9 +7,9 @@ sudo add-apt-repository ppa:git-core/ppa && sudo apt update && sudo apt upgrade 
 ```
 #### Configure Git
 ```bash
-git config --global user.name "Manuel Pinto"\
->git config --global user.email manuel@pinto.dev\
->git config --global init.defaultBranch main
+git config --global user.name "Manuel Pinto" &&
+git config --global user.email manuel@pinto.dev &&
+git config --global init.defaultBranch main
 ```
 #### Generate SSH Key
 ```bash
