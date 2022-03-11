@@ -35,7 +35,7 @@ gpg --armor --export 0123456789
 ```bash
 git config --global user.signingkey 01234567890123456789
 ```
-
+---
 ### [02] NVM - Node & NPM Setup
 #### Install NVM
 ```bash
