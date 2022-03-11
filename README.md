@@ -1,28 +1,38 @@
-# Development Environment Configuration
+# Setup Development Environment (WSL)
 
-### [01] VCS - Git Setup
-#### Update Git
+## Method 1: Execute Script (WORK IN PROGRESS)
+```bash
+curl -o- https://raw.githubusercontent.com/p1n2o/env-setup/master/wsl-env-setup.sh | bash
+```
+
+## Method 2: Manual Install
+
+### 00 Update Linux Packages
 ```bash
 sudo add-apt-repository ppa:git-core/ppa && sudo apt update && sudo apt upgrade -y
 ```
-#### Configure Git
+
+### 01 Install Version Control System — Git Setup
+#### 01.01 Update Git
 ```bash
-git config --global user.name "Manuel Pinto"
+sudo add-apt-repository ppa:git-core/ppa && sudo apt update && sudo apt upgrade -y
+```
+#### 01.02 Configure Git
+```bash
+git config --global user.name "Manuel Pinto" # Configure Git User Name
 ```
 ```bash
-git config --global user.email manuel@pinto.dev
+git config --global user.email manuel@pinto.dev # Configure Git User Email
 ```
 ```bash
-git config --global init.defaultBranch main
+git config --global init.defaultBranch main # Set 'main' as default branch
 ```
-#### Generate SSH Key
+#### 01.03 Generate SSH Key
 ```bash
-ssh-keygen -o
+ssh-keygen -t rsa -f "$HOME/.ssh/id_rsa" -P "" && cat ~/.ssh/id_rsa.pub
 ```
-```bash
-cat ~/.ssh/id_rsa.pub
-```
-#### Generate GPG Key
+Copy generated SSH public key to your VCS provider
+#### 01.04 Generate GPG Key
 ```bash
 gpg --full-gen-key
 ```
@@ -36,49 +46,43 @@ gpg --armor --export 0123456789
 git config --global user.signingkey 01234567890123456789
 ```
 ---
-### [02] NVM - Node & NPM Setup
-#### Install NVM
+### 02. Install Node Version Manager — Node + NPM Setup
+#### 02.01 Install NVM
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 ```
-#### Install Node (LTS)
+#### 02.02 Install Node (LTS)
 ```bash
 nvm install --lts
 ```
-replace ```--lts``` with ```node``` to install latest node version
-
-#### Update Node LTS (preserve global packages)
-```bash
-nvm install --lts --reinstall-packages-from=default
-```
-append ```--latest-npm``` to update to latest NPM version
-#### Update NPM (Stand-alone)
-```bash
-nvm install-latest-npm
-```
+Replace ```--lts``` with ```node``` to install latest node version
+Append ```--reinstall-packages-from=default``` to update while preserving global packages
+Append ```--latest-npm``` to install / update to latest NPM version
+Execute ```nvm install-latest-npm``` to only update NPM to latest version
 ---
-### [03] Terminal - ZSH Setup
-#### Install ZSH
+### 03 Terminal — ZSH Setup
+#### 03.01 Install ZSH
 ```bash
 sudo apt install zsh
 ```
-#### Install Oh My ZSH!
+#### 03.02 Install Oh My ZSH!
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-#### Install OMZ Plugins - Auto Suggestions
+#### 03.03 Install OMZ Plugins
 ```bash
+# Install Auto Suggestions
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
-#### Install OMZ Plugins - Syntax Highlighting
 ```bash
+# Install Syntax Highlighting
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
-#### Install OMZ Plugins - Power Level 10K Theme
 ```bash
+# Install Power Level 10K Theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
-#### Config. ZSH
+#### 03.04 Configure ZSH
 ```bash
 nano ~/.zshrc
 ```
