@@ -46,7 +46,7 @@ git config --global user.signingkey 01234567890123456789
 ```
 ---
 ### 02. Install Node Version Manager — Node + NPM Setup
-#### 02.01. Install NVM
+#### 02.01. Install / Update NVM
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 ```
