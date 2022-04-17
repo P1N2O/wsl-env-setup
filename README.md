@@ -218,7 +218,8 @@ npm i -g @angular/cli
 ```
 #### Project - Install ESLint and Prettier (with add-ons)
 ```bash
-npm install -D eslint @typescript-eslint/eslint-plugin eslint-plugin-prettier eslint-plugin-angular prettier prettier-eslint eslint-config-prettier
+npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier
+# npm install -D eslint @typescript-eslint/eslint-plugin eslint-plugin-prettier eslint-plugin-angular prettier prettier-eslint eslint-config-prettier
 ```
 #### Project - Generate ESLint Config. Files
 Generate ".eslintrc"
