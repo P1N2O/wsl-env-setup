@@ -8,13 +8,13 @@ curl -o- https://raw.githubusercontent.com/p1n2o/wsl-env-setup/master/wsl-env-se
 
 ### 00. Update Linux Packages
 ```bash
-sudo add-apt-repository ppa:git-core/ppa && sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 ```
 
-### 01. Install Version Control System — Git Setup
-#### 01.01. Update Git
+### 01. Install / Update Version Control System — Git Setup
+#### 01.01. Add Git PPA + Update Git
 ```bash
-sudo add-apt-repository ppa:git-core/ppa && sudo apt update && sudo apt upgrade -y
+sudo add-apt-repository ppa:git-core/ppa -y && sudo apt update && sudo apt upgrade -y
 ```
 #### 01.02. Configure Git
 ```bash
@@ -31,9 +31,8 @@ git config --global core.fsmonitor true #Use inbuilt filesystem monitor
 ```
 #### 01.03. Generate SSH Key
 ```bash
-ssh-keygen -t rsa -f "$HOME/.ssh/id_rsa" -P "" && cat ~/.ssh/id_rsa.pub
+ssh-keygen -t rsa -f "$HOME/.ssh/id_rsa" -P "" && cat $HOME/.ssh/id_rsa.pub
 ```
-Copy generated SSH public key to your VCS provider
 #### 01.04. Generate GPG Key
 ```bash
 gpg --full-gen-key
@@ -65,23 +64,23 @@ nvm install --lts
 ### 03. Terminal — ZSH Setup
 #### 03.01. Install ZSH
 ```bash
-sudo apt install zsh
+sudo apt install zsh -y
 ```
 #### 03.02. Install Oh My ZSH!
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 #### 03.03. Install OMZ Plugins
+Auto Suggestions
 ```bash
-# Install Auto Suggestions
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
+Syntax Highlighting
 ```bash
-# Install Syntax Highlighting
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
+Power Level 10K Theme
 ```bash
-# Install Power Level 10K Theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 #### 03.04. Configure ZSH
@@ -94,7 +93,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 ```bash
 # Use plugins
-plugins=(git nvm zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(debian git nvm node npm ng python pip zsh-autosuggestions zsh-syntax-highlighting)
 ```
 ---
 ### [04] Code Editor - VS Code Setup
