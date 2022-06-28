@@ -2,11 +2,11 @@
 
 ## ~~Method 1: Interactive~~
 ```bash
-~~curl -o- https://raw.githubusercontent.com/p1n2o/wsl-env-setup/master/wsl-env-setup.sh | bash~~
+curl -o- https://raw.githubusercontent.com/p1n2o/wsl-env-setup/master/wsl-env-setup.sh | bash
 ```
 ## Method 2: Manual Install
 
-### 00. Update Linux Packages
+### 00. System Update
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
@@ -162,7 +162,7 @@ ext install angular.ng-template
   "explorer.confirmDelete": false,
   // "emmet.triggerExpansionOnTab": true,
   "angular.log": "off",
-  "terminal.external.windowsExec": "C:\\Users\\manuel_pinto\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
+  "terminal.external.windowsExec": "C:\\Users\\User_Name\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
   "http.proxyStrictSSL": false,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.tabs.enabled": true,
