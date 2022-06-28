@@ -26,6 +26,9 @@ git config --global user.email manuel@pinto.dev #Configure Git User Email
 ```bash
 git config --global init.defaultBranch main #Set 'main' as default branch
 ```
+```bash
+git config --global core.fsmonitor true #Use inbuilt filesystem monitor
+```
 #### 01.03. Generate SSH Key
 ```bash
 ssh-keygen -t rsa -f "$HOME/.ssh/id_rsa" -P "" && cat ~/.ssh/id_rsa.pub
